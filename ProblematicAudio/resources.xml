@@ -4,6 +4,7 @@
    <resource>
       <uid>1</uid>
       <scope>default</scope>
+	  <scope>test</scope>
       <resource_type>path</resource_type>
       <file_name>./media/models</file_name>
    </resource>
@@ -11,6 +12,7 @@
    <resource>
       <uid>2</uid>
       <scope>default</scope>
+	  <scope>test</scope>
       <resource_type>path</resource_type>
       <file_name>./media/materials/scripts</file_name>
    </resource>
@@ -18,6 +20,7 @@
    <resource>
       <uid>3</uid>
       <scope>default</scope>
+	  <scope>test</scope>
       <resource_type>path</resource_type>
       <file_name>./media/materials/textures</file_name>
    </resource>
@@ -49,20 +52,53 @@
       <resource_type>mesh</resource_type>
       <file_name>propeller.mesh</file_name>
    </resource>
-
+   
    <resource>
       <uid>8</uid>
+      <scope>default</scope>
+	  <scope>test</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>cube.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>9</uid>
+      <scope>default</scope>
+	  <scope>test</scope>
+      <resource_type>path</resource_type>
+      <file_name>./</file_name>
+   </resource>
+
+   <resource>
+      <uid>101</uid>
       <scope>default</scope>
       <resource_type>audio</resource_type>
       <file_name>media/audio/ambient_water.mp3</file_name>
       <audio_type>stream</audio_type>
    </resource>
+   
+   <resource>
+      <uid>102</uid>
+      <scope>default</scope>
+	  <scope>test</scope>
+      <resource_type>audio</resource_type>
+      <file_name>media/audio/electronic_water.mp3</file_name>
+      <audio_type>BGM</audio_type>
+   </resource>
 
    <resource>
-      <uid>9</uid>
+      <uid>103</uid>
       <scope>default</scope>
       <resource_type>audio</resource_type>
       <file_name>media/audio/alien_weapon.mp3</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>104</uid>
+      <scope>default</scope>
+      <resource_type>audio</resource_type>
+      <file_name>media/audio/jump.mp3</file_name>
       <audio_type>sample</audio_type>
    </resource>
    
@@ -129,51 +165,50 @@
       <file_name>RobbitLeg.mesh</file_name>
    </resource>
    
-   <resource>
-      <uid>19</uid>
-      <scope>default</scope>
-      <resource_type>path</resource_type>
-      <file_name>./</file_name>
-   </resource>
-   
 	<resource>
-		<uid>12</uid>
+		<uid>19</uid>
 		<scope>default</scope>
+		<scope>test</scope>
 		<resource_type>cursor</resource_type>
 		<file_name>./media/assets/cursor.rml</file_name>
 	</resource>
 	
 	<resource>
-		<uid>13</uid>
+		<uid>20</uid>
 		<scope>default</scope>
+		<scope>test</scope>
 		<resource_type>document</resource_type>
 		<file_name>./media/assets/mark.rml</file_name>
 	</resource>
 	
 	<resource>
-		<uid>14</uid>
+		<uid>21</uid>
 		<scope>default</scope>
+		<scope>test</scope>
 		<resource_type>font</resource_type>
 		<file_name>./media/assets/Delicious-Roman.otf</file_name>
 	</resource>
 	
 	<resource>
-		<uid>15</uid>
+		<uid>22</uid>
 		<scope>default</scope>
+		<scope>test</scope>
 		<resource_type>font</resource_type>
 		<file_name>./media/assets/Delicious-Bold.otf</file_name>
 	</resource>
 	
 	<resource>
-		<uid>16</uid>
+		<uid>23</uid>
 		<scope>default</scope>
+		<scope>test</scope>
 		<resource_type>font</resource_type>
 		<file_name>./media/assets/Delicious-Italic.otf</file_name>
 	</resource>
 	
 	<resource>
-		<uid>17</uid>
+		<uid>24</uid>
 		<scope>default</scope>
+		<scope>test</scope>
 		<resource_type>font</resource_type>
 		<file_name>./media/assets/Delicious-BoldItalic.otf</file_name>
 	</resource>

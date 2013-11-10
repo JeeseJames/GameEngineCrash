@@ -3,7 +3,7 @@ CC = g++
 GAME_PATH = C:
 
 INC_DIRS=-I./ -I$(GAME_PATH)/Ogre/include/Ogre/ -I$(GAME_PATH)/Ogre/boost/  -I./OIS/include/OIS/ -I./TinyXML/ -I./Bass/ -I./libRocket/include/ 
-LIB_DIRS=-L./ -L$(GAME_PATH)/Ogre/lib/Release/ -L$(GAME_PATH)/Ogre/boost/lib/ -L./OIS/lib/ -L./TinyXML/ -L./Bass/ -L./libRocket/lib/ -L./CSC2110/
+LIB_DIRS=-L./ -L$(GAME_PATH)/Ogre/lib/Release/ -L$(GAME_PATH)/Ogre/boost/lib/ -L./OIS/lib/ -L./TinyXML/ -L./Bass/ -L./libRocket/lib/ -L./CSC2110/ 
 LIBS=-lOgreMain -lboost_system-mgw47-mt-1_51 -ltinyxml -lCSC2110 -lOIS -lbass -lRocketCore -lRocketControls -lRocketDebugger
 
 COMPILE = $(CC) $(INC_DIRS) -w -c
@@ -11,8 +11,8 @@ LINK = $(CC) $(LIB_DIRS) -o
 
 all: Ogre
 
-Ogre:   RenderListener.o RenderManager.o GameException.o ErrorLogManager.o GameManager.o ResourceManager.o GameResource.o MeshResource.o PathResource.o KeyPressBehavior.o KeyReleaseBehavior.o KeyHeldBehavior.o MousePressBehavior.o MouseReleaseBehavior.o MouseMoveBehavior.o MouseHeldBehavior.o InputManager.o BehaviorManager.o KeyState.o AudioPlayer.o AudioManager.o AudioResource.o GUIManager.o FontResource.o CursorResource.o DocumentResource.o RenderInterfaceOgre3D.o SystemInterfaceOgre3D.o AudioManager.o Main.o
-	$(LINK) Game.exe RenderListener.o RenderManager.o GameException.o ErrorLogManager.o GameManager.o ResourceManager.o GameResource.o MeshResource.o PathResource.o KeyPressBehavior.o KeyReleaseBehavior.o KeyHeldBehavior.o MousePressBehavior.o MouseReleaseBehavior.o MouseMoveBehavior.o MouseHeldBehavior.o InputManager.o BehaviorManager.o KeyState.o  AudioPlayer.o AudioResource.o GUIManager.o FontResource.o CursorResource.o DocumentResource.o RenderInterfaceOgre3D.o SystemInterfaceOgre3D.o AudioManager.o Main.o $(LIBS)
+Ogre:   RenderListener.o RenderManager.o GameException.o ErrorLogManager.o GameManager.o ResourceManager.o GameResource.o MeshResource.o PathResource.o GameBehavior.o GUIActionBehavior.o KeyPressBehavior.o KeyReleaseBehavior.o KeyHeldBehavior.o MousePressBehavior.o MouseReleaseBehavior.o MouseMoveBehavior.o MouseHeldBehavior.o InputManager.o BehaviorManager.o KeyState.o GUIManager.o FontResource.o CursorResource.o DocumentResource.o RenderInterfaceOgre3D.o SystemInterfaceOgre3D.o AudioPlayer.o AudioManager.o AudioResource.o Main.o
+	$(LINK) Game.exe RenderListener.o RenderManager.o GameException.o ErrorLogManager.o GameManager.o ResourceManager.o GameResource.o MeshResource.o PathResource.o GameBehavior.o GUIActionBehavior.o KeyPressBehavior.o KeyReleaseBehavior.o KeyHeldBehavior.o MousePressBehavior.o MouseReleaseBehavior.o MouseMoveBehavior.o MouseHeldBehavior.o InputManager.o BehaviorManager.o KeyState.o GUIManager.o FontResource.o CursorResource.o DocumentResource.o RenderInterfaceOgre3D.o SystemInterfaceOgre3D.o AudioPlayer.o AudioManager.o AudioResource.o Main.o $(LIBS)
 
 GameException.o:	GameException.h GameException.cpp
 			$(COMPILE) GameException.cpp
@@ -40,6 +40,12 @@ MeshResource.o:     MeshResource.h MeshResource.cpp
 			
 PathResource.o:     PathResource.h PathResource.cpp
 			$(COMPILE) PathResource.cpp
+			
+GameBehavior.o: 	GameBehavior.h GameBehavior.cpp
+			$(COMPILE) GameBehavior.cpp
+			
+GUIActionBehavior.o:	GUIActionBehavior.h GUIActionBehavior.cpp
+			$(COMPILE) GUIActionBehavior.cpp
 			
 KeyPressBehavior.o:  KeyPressBehavior.h KeyPressBehavior.cpp
 			$(COMPILE) KeyPressBehavior.cpp
@@ -115,8 +121,11 @@ clean:
 			rm -rf GameResource.o
 			rm -rf MeshResource.o
 			rm -rf PathResource.o
+			rm -rf GameBehavior.o
+			rm -rf GUIActionBehavior.o
 			rm -rf KeyPressBehavior.o
 			rm -rf KeyReleaseBehavior.o
+			rm -rf KeyHeldBehavior.o
 			rm -rf MousePressBehavior.o
 			rm -rf MouseReleaseBehavior.o
 			rm -rf MouseMoveBehavior.o
@@ -124,6 +133,15 @@ clean:
 			rm -rf InputManager.o
 			rm -rf BehaviorManager.o
 			rm -rf KeyState.o
+			rm -rf AudioResource.o
+			rm -rf AudioPlayer.o
+			rm -rf AudioManager.o
+			rm -rf GUIManager.o
+			rm -rf FontResource.o
+			rm -rf CursorResource.o
+			rm -rf DocumentResource.o
+			rm -rf SystemInterfaceOgre3D.o
+			rm -rf RenderInterfaceOgre3D.o
 			rm -rf Main.o
 			rm -rf Ogre.log
 			rm -rf GameLog.txt

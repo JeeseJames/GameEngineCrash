@@ -1,28 +1,19 @@
 #if !defined (KEY_RELEASE_BEHAVIOR)
 #define KEY_RELEASE_BEHAVIOR
 
+#include "GameBehavior.h"
 #include <iostream>
 
-class KeyReleaseBehavior
+class KeyReleaseBehavior : public GameBehavior
 {
 
-   private:
-      std::string key;
-      std::string object;
-      std::string action;
-
-      double magnitude;
-      GameManager* game_manager;
-
    public:
-      KeyReleaseBehavior(std::string key, std::string object, std::string action, double magnitude, GameManager* gm);
-      virtual ~KeyReleaseBehavior();
+      KeyReleaseBehavior(std::string k, std::string o, std::string a, std::string n, double mag, GameManager* gm): GameBehavior(k,o,a,n,mag,gm){};
+      virtual ~KeyReleaseBehavior(){};
 
-      virtual std::string getKey();
       virtual void executeAction();
-
-      static int compare_items(KeyReleaseBehavior* krb1, KeyReleaseBehavior* krb2);
-      static int compare_keys(std::string* gk, KeyReleaseBehavior* krb);
+	  virtual void executeAction(int x, int y, float x_rel, float y_rel){}; //used in mouse move
+	  virtual void executeAction(int x, int y){};//Mouse press and release use this
 
 };
 

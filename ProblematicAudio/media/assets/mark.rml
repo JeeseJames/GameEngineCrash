@@ -1,16 +1,16 @@
 <rml>
 
    <head>
-      <title>Yellow Sub Rotater</title>
+      <title>GUI</title>
       <link type="text/rcss" href="rkt.rcss"/>
       <link type="text/rcss" href="invader.rcss"/>
       <style>
          body
          {
-            top: 0px;
-            left: 0px;
-            width: 200px;
-            height: 250px;
+            top: 00px;
+            left: 00px;
+            width: 600px;
+            height: 200px;
 				
             margin: auto;
          }
@@ -25,17 +25,20 @@
    <body class="window">
 
       <div id="content">
-         <button id="rotate pitch">Pitch</button>
-         <button id="rotate yaw">Yaw</button>
-         <button id="rotate roll">Roll</button>
+         <button id="pause bgm">Pause BGM</button>
+         <button id="close gui">Close GUI</button>
+		 <button id="exit">Exit Game</button>
 
-<!--
-         <select>
-            <option value="pitch" selected>Pitch</option>
-            <option value="yaw">Yaw</option>
-            <option value="roll">Roll</option>
+
+         <select id="Lights">
+            <option value="pitch" selected>You</option>
+            <option value="yaw">Can</option>
+            <option value="roll">Click</option>
+			<option value="x">Me</option>
+            <option value="y">!!!!!!</option>
+            <option value="z" unselectable>But Not Me</option>
          </select>
--->
+
       </div>
 
    </body>

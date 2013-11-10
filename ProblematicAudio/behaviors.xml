@@ -4,16 +4,18 @@
    <behavior>
       <type>key_press</type>
       <key>L</key>
-      <object>Light1</object>
+      <object>Light</object>
       <action>Toggle</action>
+	  <name>Light1</name>
       <magnitude>0</magnitude>
    </behavior>
    
    <behavior>
       <type>key_press</type>
       <key>K</key>
-      <object>Light2</object>
+      <object>Light</object>
       <action>Toggle</action>
+	  <name>Light2</name>
       <magnitude>0</magnitude>
    </behavior>
    
@@ -84,96 +86,108 @@
    <behavior>
       <type>key_held</type>
       <key>UP_ARROW</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Forward</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>5</magnitude>
    </behavior>
    
    <behavior>
       <type>key_held</type>
       <key>DOWN_ARROW</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Backward</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>5</magnitude>
    </behavior>
    
    <behavior>
       <type>key_press</type>
       <key>SPACE</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Jump</action>
+	  <name>Robbit Transform Node,104</name>
       <magnitude>1</magnitude>
    </behavior>
    
    <behavior>
       <type>key_release</type>
       <key>SPACE</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Jump</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>1</magnitude>
    </behavior>
 
    <behavior>
       <type>key_held</type>
       <key>LEFT_ARROW</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Strafe Left</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>-5</magnitude>
    </behavior>
 
    <behavior>
       <type>key_held</type>
       <key>RIGHT_ARROW</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Strafe Right</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>-5</magnitude>
    </behavior>
    
    <behavior>
       <type>key_held</type>
       <key>NUMPAD1</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Yaw</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>50</magnitude>
    </behavior>
    
    <behavior>
       <type>key_held</type>
       <key>NUMPAD4</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Yaw</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>-50</magnitude>
    </behavior>
    
    <behavior>
       <type>key_held</type>
       <key>NUMPAD2</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Roll</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>50</magnitude>
    </behavior>
    
    <behavior>
       <type>key_held</type>
       <key>NUMPAD5</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Roll</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>-50</magnitude>
    </behavior>
    
    <behavior>
       <type>key_held</type>
       <key>NUMPAD3</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Pitch</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>50</magnitude>
    </behavior>
    
    <behavior>
       <type>key_held</type>
       <key>NUMPAD6</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Pitch</action>
+	  <name>Robbit Transform Node</name>
       <magnitude>-50</magnitude>
    </behavior>
    
@@ -212,36 +226,129 @@
    <behavior>
       <type>mouse_held</type>
 	  <key>RIGHT</key>
-      <object>Robbit Transform Node</object>
+      <object>Player</object>
       <action>Yaw</action>
-      <magnitude>1000</magnitude>
+	  <name>Robbit Transform Node</name>
+      <magnitude>2000</magnitude>
    </behavior>
-   
+     
    <behavior>
-      <type>mouse_release</type>
-	  <key>MIDDLE</key>
-      <object>ALL_LIGHTS</object>
-      <action>On</action>
-      <magnitude>0</magnitude>
-   </behavior>
-   
-   <behavior>
-      <type>mouse_press</type>
-	  <key>MIDDLE</key>
-      <object>ALL_LIGHTS</object>
-      <action>Off</action>
+      <type>key_press</type>
+      <key>R</key>
+      <object>GUI</object>
+      <action>Enable</action>
       <magnitude>0</magnitude>
    </behavior>
    
    <behavior>
       <type>key_press</type>
-      <key>R</key>
-      <object>Rocket</object>
-      <action>Enable</action>
+      <key>F11</key>
+      <object>Screen</object>
+      <action>Full screen</action>
+	  <name>1920x1080</name>
       <magnitude>0</magnitude>
    </behavior>
    
+   <behavior>
+      <type>key_press</type>
+      <key>BACK</key>
+      <object>Screen</object>
+      <action>Exit</action>
+      <magnitude>0</magnitude>
+   </behavior>
    
+   <behavior>
+      <type>key_press</type>
+      <key>G</key>
+      <object>Audio</object>
+	  <name>101</name>
+      <action>Play</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>F</key>
+      <object>Audio</object>
+	  <name>103</name>
+      <action>Play</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>P</key>
+      <object>Audio</object>
+	  <name>101</name>
+      <action>Pause</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>M</key>
+      <object>Audio</object>
+      <action>Pause BGM</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>0</key>
+      <object>Audio</object>
+      <action>Volume Up</action>
+      <magnitude>0.1</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>9</key>
+      <object>Audio</object>
+      <action>Volume Down</action>
+      <magnitude>0.1</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>gui_action</type>
+      <key>rotate yaw</key>
+      <object>Player</object>
+      <action>Yaw</action>
+	  <name>Robbit Transform Node</name>
+      <magnitude>50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>8</key>
+      <object>Group</object>
+      <action>Load</action>
+	  <name>test</name>
+      <magnitude>0.1</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>gui_action</type>
+      <key>close gui</key>
+      <object>GUI</object>
+      <action>Enable</action>
+      <magnitude>50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>gui_action</type>
+      <key>exit</key>
+      <object>Screen</object>
+      <action>Exit</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>gui_action</type>
+      <key>pause bgm</key>
+      <object>Audio</object>
+      <action>Pause BGM</action>
+      <magnitude>0</magnitude>
+   </behavior>
 
 </behaviors>
 

@@ -25,7 +25,7 @@ AudioResourceInfo* AudioResource::getAudioResourceInfo()
 //such a failure should not terminate the game, however
 void AudioResource::load()
 {
-cout<<"14 characters ";
+//cout<<"14 characters";
    if (audio_type == SAMPLE)
    {
       game_manager->loadSampleAudioResource(getResourceFileName(), ar_info);

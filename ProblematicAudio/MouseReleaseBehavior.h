@@ -2,29 +2,20 @@
 #define Mouse_RELEASE_BEHAVIOR
 
 
+#include "GameBehavior.h"
 #include <iostream>
 
-class MouseReleaseBehavior
+class MouseReleaseBehavior : public GameBehavior
 {
 
-   private:
-      std::string key;
-      std::string object;
-      std::string action;
-
-      double magnitude;
-      GameManager* game_manager;
 
    public:
-      MouseReleaseBehavior(std::string key, std::string object, std::string action, double magnitude, GameManager* gm);
-      virtual ~MouseReleaseBehavior();
+      MouseReleaseBehavior(std::string k, std::string o, std::string a, std::string n, double mag, GameManager* gm): GameBehavior(k,o,a,n,mag,gm){};
+      virtual ~MouseReleaseBehavior(){};
 
-      virtual std::string getKey();
       virtual void executeAction(int x, int y);
-
-      static int compare_items(MouseReleaseBehavior* mrb1, MouseReleaseBehavior* mrb2);
-      static int compare_keys(std::string* mk, MouseReleaseBehavior* mrb);
-
+	  virtual void executeAction(){};
+	  virtual void executeAction(int x, int y, float x_rel, float y_rel){}; //used in mouse move
 };
 
 #endif

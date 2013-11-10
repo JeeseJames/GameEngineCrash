@@ -3,6 +3,7 @@
 
 #include "TinyXML.h"
 #include "CSC2110/TableAVL.h"
+#include "GUIActionBehavior.h"
 #include "KeyPressBehavior.h"
 #include "KeyReleaseBehavior.h"
 #include "KeyHeldBehavior.h"
@@ -19,14 +20,14 @@ class BehaviorManager : public InputListener
 		GameManager* game_manager;
 		void init();
 		
-		
-		TableAVL<KeyPressBehavior, std::string>* key_press_behaviors;
-		TableAVL<KeyReleaseBehavior, std::string>* key_release_behaviors;
-		TableAVL<KeyHeldBehavior,std::string>* key_held_behaviors;
-		TableAVL<MousePressBehavior,std::string>* mouse_press_behaviors;
-		TableAVL<MouseReleaseBehavior,std::string>* mouse_release_behaviors;
-		TableAVL<MouseMoveBehavior,std::string>* mouse_move_behaviors;
-		TableAVL<MouseHeldBehavior,std::string>* mouse_held_behaviors;
+		TableAVL<GameBehavior, std::string>* gui_action_behaviors;
+		TableAVL<GameBehavior, std::string>* key_press_behaviors;
+		TableAVL<GameBehavior, std::string>* key_release_behaviors;
+		TableAVL<GameBehavior,std::string>* key_held_behaviors;
+		TableAVL<GameBehavior,std::string>* mouse_press_behaviors;
+		TableAVL<GameBehavior,std::string>* mouse_release_behaviors;
+		TableAVL<GameBehavior,std::string>* mouse_move_behaviors;
+		TableAVL<GameBehavior,std::string>* mouse_held_behaviors;
 		TableAVL<KeyState,std::string>* key_states;
 		TableAVL<KeyState,std::string>* mouse_states;
 		void loadBehaviorsFromXML(std::string file_name);
@@ -35,6 +36,7 @@ class BehaviorManager : public InputListener
 		BehaviorManager(GameManager* gm);
 		virtual ~BehaviorManager();
 		
+		void executeGUIAction(std::string gui_key);
 		void keyPressed(std::string game_key);
 		void keyReleased(std::string game_key);
 		void mouseMoved(int mouse_x, int mouse_y, float mouse_x_rel, float mouse_y_rel);

@@ -11,14 +11,105 @@ BehaviorManager::BehaviorManager(GameManager* gm)
 
 BehaviorManager::~BehaviorManager()
 {
-	//delete each KeyPressBehavior via iteration
-   delete key_states;
+cout<<"Destorying Behavior Manager"<<endl;
+   AVLTreeIterator<GameBehavior>* iter = key_press_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+
+   delete iter;
    delete key_press_behaviors;
+
+   iter = key_release_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+   
+   delete iter;
    delete key_release_behaviors;
+   
+   iter = key_held_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+   
+   delete iter;
+   delete key_held_behaviors;
+   
+   iter = mouse_move_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+   
+   delete iter;
    delete mouse_move_behaviors;
+   
+   iter = mouse_move_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+   
+   delete iter;
    delete mouse_press_behaviors;
+   
+   iter = mouse_move_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+   
+   delete iter;
    delete mouse_release_behaviors;
+   iter = mouse_move_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+   
+   delete iter;
    delete mouse_held_behaviors;
+   
+   iter = gui_action_behaviors->tableIterator();
+   while(iter->hasNext())
+   {
+      GameBehavior* gb = iter->next();
+      delete gb;
+   }
+   
+   delete iter;
+   delete gui_action_behaviors;
+   
+   
+   AVLTreeIterator<KeyState>* ksiter = key_states->tableIterator();
+      while(ksiter->hasNext())
+   {
+      KeyState* ks = ksiter->next();
+      delete ks;
+   }
+   delete ksiter;
+   delete key_states;
+   
+   ksiter = mouse_states->tableIterator();
+   
+      while(ksiter->hasNext())
+   {
+      KeyState* ks = ksiter->next();
+      delete ks;
+   }
+   delete ksiter;
+   delete mouse_states;
 }
 
 void BehaviorManager::init()
@@ -28,15 +119,16 @@ void BehaviorManager::init()
 
 void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
 {
-   key_press_behaviors = new TableAVL<KeyPressBehavior, std::string>(&KeyPressBehavior::compare_items, &KeyPressBehavior::compare_keys);
-   key_release_behaviors = new TableAVL<KeyReleaseBehavior, std::string>(&KeyReleaseBehavior::compare_items, &KeyReleaseBehavior::compare_keys);
-   key_held_behaviors = new TableAVL<KeyHeldBehavior, std::string>(&KeyHeldBehavior::compare_items, &KeyHeldBehavior::compare_keys);
+   gui_action_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
+   key_press_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
+   key_release_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
+   key_held_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
    key_states = new TableAVL<KeyState,std::string>(&KeyState::compare_items, &KeyState::compare_keys);
    mouse_states = new TableAVL<KeyState,std::string>(&KeyState::compare_items, &KeyState::compare_keys);
-   mouse_press_behaviors = new TableAVL<MousePressBehavior, std::string>(&MousePressBehavior::compare_items, &MousePressBehavior::compare_keys);
-   mouse_release_behaviors = new TableAVL<MouseReleaseBehavior, std::string>(&MouseReleaseBehavior::compare_items, &MouseReleaseBehavior::compare_keys);
-   mouse_move_behaviors = new TableAVL<MouseMoveBehavior, std::string>(&MouseMoveBehavior::compare_items, &MouseMoveBehavior::compare_keys);
-   mouse_held_behaviors = new TableAVL<MouseHeldBehavior, std::string>(&MouseHeldBehavior::compare_items, &MouseHeldBehavior::compare_keys);
+   mouse_press_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
+   mouse_release_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
+   mouse_move_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
+   mouse_held_behaviors = new TableAVL<GameBehavior, std::string>(&GameBehavior::compare_items, &GameBehavior::compare_keys);
 	  
  
 
@@ -54,15 +146,29 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
          {
             std::string behavior_type_text = GameManager::textFromChildNode(behavior_node, "type");
 
-            if (behavior_type_text == "key_press")
+            if(behavior_type_text == "gui_action")
+			{
+				std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
+               std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
+               std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
+               std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
+               double magnitude = GameManager::parseDouble(behavior_magnitude_text);
+                  
+               GUIActionBehavior* gab = new GUIActionBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
+               gui_action_behaviors->tableInsert(gab);
+				
+			}
+			else if (behavior_type_text == "key_press")
             {
                std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
                std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
                std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
                std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
                double magnitude = GameManager::parseDouble(behavior_magnitude_text);
                   
-               KeyPressBehavior* kpb = new KeyPressBehavior(behavior_key_text, behavior_object_text, behavior_action_text, magnitude, game_manager);
+               KeyPressBehavior* kpb = new KeyPressBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
                key_press_behaviors->tableInsert(kpb);
             }
 
@@ -71,10 +177,11 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
                std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
                std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
                std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
                std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
                double magnitude = GameManager::parseDouble(behavior_magnitude_text);
                   
-               KeyReleaseBehavior* krb = new KeyReleaseBehavior(behavior_key_text, behavior_object_text, behavior_action_text, magnitude, game_manager);
+               KeyReleaseBehavior* krb = new KeyReleaseBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
                key_release_behaviors->tableInsert(krb);
             }
 
@@ -83,10 +190,11 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
 			   std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
                std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
                std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
                std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
                double magnitude = GameManager::parseDouble(behavior_magnitude_text);
                   
-               KeyHeldBehavior* khb = new KeyHeldBehavior(behavior_key_text, behavior_object_text, behavior_action_text, magnitude, game_manager);
+               KeyHeldBehavior* khb = new KeyHeldBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
                key_held_behaviors->tableInsert(khb);
 			   //make and add KeyState
 			   KeyState* ks = new KeyState(behavior_key_text);
@@ -98,10 +206,11 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
 			   std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
                std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
                std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
                std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
                double magnitude = GameManager::parseDouble(behavior_magnitude_text);
                   
-               MousePressBehavior* mpb = new MousePressBehavior(behavior_key_text, behavior_object_text, behavior_action_text, magnitude, game_manager);
+               GameBehavior* mpb = new MousePressBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
                mouse_press_behaviors->tableInsert(mpb);
 			}
 			
@@ -110,10 +219,11 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
 			   std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
                std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
                std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
                std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
                double magnitude = GameManager::parseDouble(behavior_magnitude_text);
                   
-               MouseReleaseBehavior* mrb = new MouseReleaseBehavior(behavior_key_text, behavior_object_text, behavior_action_text, magnitude, game_manager);
+               MouseReleaseBehavior* mrb = new MouseReleaseBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
                mouse_release_behaviors->tableInsert(mrb);
 			}
 			
@@ -122,10 +232,11 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
 			   std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
                std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
                std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
                std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
                double magnitude = GameManager::parseDouble(behavior_magnitude_text);
                   
-               MouseHeldBehavior* mhb = new MouseHeldBehavior(behavior_key_text, behavior_object_text, behavior_action_text, magnitude, game_manager);
+               MouseHeldBehavior* mhb = new MouseHeldBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
                mouse_held_behaviors->tableInsert(mhb);
 			   
 			   //make and add KeyState for the mousebutton
@@ -138,10 +249,11 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
                std::string behavior_key_text = GameManager::textFromChildNode(behavior_node, "key");
 			   std::string behavior_object_text = GameManager::textFromChildNode(behavior_node, "object");
                std::string behavior_action_text = GameManager::textFromChildNode(behavior_node, "action");
+			   std::string behavior_name_text = GameManager::textFromChildNode(behavior_node, "name");
                std::string behavior_magnitude_text = GameManager::textFromChildNode(behavior_node, "magnitude");
                double magnitude = GameManager::parseDouble(behavior_magnitude_text);
                   
-               MouseMoveBehavior* mmb = new MouseMoveBehavior(behavior_key_text, behavior_object_text, behavior_action_text, magnitude, game_manager);
+               MouseMoveBehavior* mmb = new MouseMoveBehavior(behavior_key_text, behavior_object_text, behavior_action_text, behavior_name_text, magnitude, game_manager);
                mouse_move_behaviors->tableInsert(mmb);
             }
          }
@@ -153,18 +265,25 @@ void BehaviorManager::loadBehaviorsFromXML(std::string file_name)
       THROW_EXCEPTION(1, "Failed to find the behavior XML file.");
    }
 }
-
+void BehaviorManager::executeGUIAction(std::string gui_key)
+{
+	GameBehavior* gab = gui_action_behaviors->tableRetrieve(&gui_key);
+	if(gab)
+	{
+		gab->executeAction();
+	}
+}
 void BehaviorManager::keyPressed(std::string game_key)
 {
 
-   if (game_key == "ESCAPE")
+   if (game_key == "ESCAPE")  //I have decided to leave this hard coded in, just in case an exit is not defined in behaviors.xml
    {
       game_manager->stopRendering();
       return;
    }
 
    //store the KeyPressedBehaviors in a table with the GameKey as the search key
-   KeyPressBehavior* kpb = key_press_behaviors->tableRetrieve(&game_key);
+   GameBehavior* kpb = key_press_behaviors->tableRetrieve(&game_key);
 
    KeyState* ks = key_states->tableRetrieve(&game_key);
 	if(ks)
@@ -179,7 +298,7 @@ void BehaviorManager::keyPressed(std::string game_key)
 void BehaviorManager::keyReleased(std::string game_key)
 {
 	//store the KeyPressedBehaviors in a table with the GameKey as the search key
-   KeyReleaseBehavior* krb = key_release_behaviors->tableRetrieve(&game_key);
+   GameBehavior* krb = key_release_behaviors->tableRetrieve(&game_key);
 
     KeyState* ks = key_states->tableRetrieve(&game_key);
 	if(ks)
@@ -203,7 +322,7 @@ void BehaviorManager::mouseMoved(int mouse_x, int mouse_y, float mouse_x_rel, fl
 	
 	game_manager->rocketMouseMoved(mouse_x, mouse_y);
 	
-	MouseMoveBehavior* mmb = mouse_move_behaviors->tableRetrieve(&name);
+	GameBehavior* mmb = mouse_move_behaviors->tableRetrieve(&name);
 	if(mmb)
 	{
 		mmb->executeAction(mouse_x, mouse_y, mouse_x_rel, mouse_y_rel); 
@@ -256,7 +375,8 @@ void BehaviorManager::mouseMoved(int mouse_x, int mouse_y, float mouse_x_rel, fl
 void BehaviorManager::mousePressed(int mouse_x, int mouse_y, std::string game_mouse)
 {
 	KeyState* ms = mouse_states->tableRetrieve(&game_mouse);
-	MousePressBehavior* mpb = mouse_press_behaviors->tableRetrieve(&game_mouse);
+	GameBehavior* mpb = mouse_press_behaviors->tableRetrieve(&game_mouse);
+	game_manager->rocketMousePressed(mouse_x, mouse_y, game_manager->parseDouble(game_mouse));
 	if(ms)
 	{
 		ms->setDown();
@@ -270,7 +390,8 @@ void BehaviorManager::mousePressed(int mouse_x, int mouse_y, std::string game_mo
 void BehaviorManager::mouseReleased(int mouse_x, int mouse_y, std::string game_mouse)
 {
 	KeyState* ms = mouse_states->tableRetrieve(&game_mouse);
-	MouseReleaseBehavior* mrb = mouse_release_behaviors->tableRetrieve(&game_mouse);
+	GameBehavior* mrb = mouse_release_behaviors->tableRetrieve(&game_mouse);
+	game_manager->rocketMouseReleased(mouse_x,mouse_y,game_manager->parseDouble(game_mouse));
 	if(ms)
 	{
 		ms->setUp();
@@ -294,7 +415,7 @@ void BehaviorManager::checkInput() //Called every frame, checks if a key is held
 		if(ks->isDown())
 		{
 			name = ks->getKey();
-			KeyHeldBehavior* khb = ( key_held_behaviors->tableRetrieve( &name ) );
+			GameBehavior* khb = ( key_held_behaviors->tableRetrieve( &name ) );
 			khb->executeAction();
 		}
 	}
@@ -308,7 +429,7 @@ void BehaviorManager::checkInput() //Called every frame, checks if a key is held
 		if(ms->isDown())
 		{
 			name = ms->getKey();
-			MouseHeldBehavior* mhb = ( mouse_held_behaviors->tableRetrieve( &name ) );
+			GameBehavior* mhb = ( mouse_held_behaviors->tableRetrieve( &name ) );
 			mhb->executeAction();
 		}
 	}

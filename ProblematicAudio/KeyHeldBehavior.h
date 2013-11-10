@@ -5,27 +5,16 @@
 
 #include <iostream>
 
-class KeyHeldBehavior
+class KeyHeldBehavior : public GameBehavior
 {
 
-   private:
-      std::string key;
-      std::string object;
-      std::string action;
-
-      double magnitude;
-      GameManager* game_manager;
 
    public:
-      KeyHeldBehavior(std::string key, std::string object, std::string action, double magnitude, GameManager* gm);
-      virtual ~KeyHeldBehavior();
-
-      virtual std::string getKey();
+      KeyHeldBehavior(std::string k, std::string o, std::string a, std::string n, double mag, GameManager* gm): GameBehavior(k,o,a,n,mag,gm){};
+      virtual ~KeyHeldBehavior(){};
       virtual void executeAction();
-
-      static int compare_items(KeyHeldBehavior* khb1, KeyHeldBehavior* khb2);
-      static int compare_keys(std::string* gk, KeyHeldBehavior* khb);
-
+	  virtual void executeAction(int x, int y, float x_rel, float y_rel){}; //used in mouse move
+	  virtual void executeAction(int x, int y){};//Mouse press and release use this
 };
 
 #endif

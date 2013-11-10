@@ -1,0 +1,12 @@
+
+material Cylinder
+{
+    technique
+    {
+        pass
+        {
+            ambient 0.0 0.0 0.0 1.0
+            diffuse 0.0 1.0 0.0 1.0
+        }
+    }
+}

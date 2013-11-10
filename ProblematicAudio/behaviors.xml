@@ -1,0 +1,247 @@
+
+<behaviors>
+
+   <behavior>
+      <type>key_press</type>
+      <key>L</key>
+      <object>Light1</object>
+      <action>Toggle</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>K</key>
+      <object>Light2</object>
+      <action>Toggle</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>W</key>
+      <object>Camera</object>
+      <action>Forward</action>
+      <magnitude>5</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>W</key>
+      <object>Camera</object>
+      <action>Forward</action>
+      <magnitude>5</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>S</key>
+      <object>Camera</object>
+      <action>Backward</action>
+      <magnitude>5</magnitude>
+   </behavior>
+   
+      <behavior>
+      <type>key_held</type>
+      <key>S</key>
+      <object>Camera</object>
+      <action>Backward</action>
+      <magnitude>5</magnitude>
+   </behavior>
+
+   <behavior>
+      <type>key_press</type>
+      <key>A</key>
+      <object>Camera</object>
+      <action>Strafe Left</action>
+      <magnitude>5</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>A</key>
+      <object>Camera</object>
+      <action>Strafe Left</action>
+      <magnitude>5</magnitude>
+   </behavior>
+
+   <behavior>
+      <type>key_press</type>
+      <key>D</key>
+      <object>Camera</object>
+      <action>Strafe Right</action>
+      <magnitude>5</magnitude>
+   </behavior>
+
+   <behavior>
+      <type>key_held</type>
+      <key>D</key>
+      <object>Camera</object>
+      <action>Strafe Right</action>
+      <magnitude>5</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>UP_ARROW</key>
+      <object>Robbit Transform Node</object>
+      <action>Forward</action>
+      <magnitude>5</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>DOWN_ARROW</key>
+      <object>Robbit Transform Node</object>
+      <action>Backward</action>
+      <magnitude>5</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>SPACE</key>
+      <object>Robbit Transform Node</object>
+      <action>Jump</action>
+      <magnitude>1</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_release</type>
+      <key>SPACE</key>
+      <object>Robbit Transform Node</object>
+      <action>Jump</action>
+      <magnitude>1</magnitude>
+   </behavior>
+
+   <behavior>
+      <type>key_held</type>
+      <key>LEFT_ARROW</key>
+      <object>Robbit Transform Node</object>
+      <action>Strafe Left</action>
+      <magnitude>-5</magnitude>
+   </behavior>
+
+   <behavior>
+      <type>key_held</type>
+      <key>RIGHT_ARROW</key>
+      <object>Robbit Transform Node</object>
+      <action>Strafe Right</action>
+      <magnitude>-5</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>NUMPAD1</key>
+      <object>Robbit Transform Node</object>
+      <action>Yaw</action>
+      <magnitude>50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>NUMPAD4</key>
+      <object>Robbit Transform Node</object>
+      <action>Yaw</action>
+      <magnitude>-50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>NUMPAD2</key>
+      <object>Robbit Transform Node</object>
+      <action>Roll</action>
+      <magnitude>50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>NUMPAD5</key>
+      <object>Robbit Transform Node</object>
+      <action>Roll</action>
+      <magnitude>-50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>NUMPAD3</key>
+      <object>Robbit Transform Node</object>
+      <action>Pitch</action>
+      <magnitude>50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_held</type>
+      <key>NUMPAD6</key>
+      <object>Robbit Transform Node</object>
+      <action>Pitch</action>
+      <magnitude>-50</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>mouse_held</type>
+	  <key>LEFT</key>
+      <object>NOTHING</object>
+      <action>NOTHING</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>mouse_move</type>
+	  <key>LEFT</key>
+      <object>Camera</object>
+      <action>Reverse Y Rotate</action>
+      <magnitude>200</magnitude>
+   </behavior>
+      
+   <behavior>
+      <type>mouse_held</type>
+	  <key>BUTTON4</key>
+      <object>NOTHING</object>
+      <action>NOTHING</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>mouse_move</type>
+	  <key>BUTTON4</key>
+      <object>Camera</object>
+      <action>Rotate</action>
+      <magnitude>200</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>mouse_held</type>
+	  <key>RIGHT</key>
+      <object>Robbit Transform Node</object>
+      <action>Yaw</action>
+      <magnitude>1000</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>mouse_release</type>
+	  <key>MIDDLE</key>
+      <object>ALL_LIGHTS</object>
+      <action>On</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>mouse_press</type>
+	  <key>MIDDLE</key>
+      <object>ALL_LIGHTS</object>
+      <action>Off</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   <behavior>
+      <type>key_press</type>
+      <key>R</key>
+      <object>Rocket</object>
+      <action>Enable</action>
+      <magnitude>0</magnitude>
+   </behavior>
+   
+   
+
+</behaviors>
+

@@ -1,0 +1,43 @@
+<rml>
+
+   <head>
+      <title>Yellow Sub Rotater</title>
+      <link type="text/rcss" href="rkt.rcss"/>
+      <link type="text/rcss" href="invader.rcss"/>
+      <style>
+         body
+         {
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 250px;
+				
+            margin: auto;
+         }
+				
+         div#content
+         {
+            text-align: center;
+         }
+      </style>
+   </head>
+
+   <body class="window">
+
+      <div id="content">
+         <button id="rotate pitch">Pitch</button>
+         <button id="rotate yaw">Yaw</button>
+         <button id="rotate roll">Roll</button>
+
+<!--
+         <select>
+            <option value="pitch" selected>Pitch</option>
+            <option value="yaw">Yaw</option>
+            <option value="roll">Roll</option>
+         </select>
+-->
+      </div>
+
+   </body>
+
+</rml>

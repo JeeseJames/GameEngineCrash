@@ -1,0 +1,1775 @@
+
+<default>
+
+   <camera>
+      <position>0,3,-15</position>
+      <look_at>0,-300,1500</look_at>
+      <clip_distance>2,50</clip_distance>
+   </camera>
+
+   <light>
+      <name>Light1</name>
+      <type>directional</type>
+      <position>0,0,1</position>
+      <color>1,1,1</color>
+   </light>
+   
+   <light>
+      <name>Light2</name>
+      <type>directional</type>
+      <position>0,0,-1</position>
+      <color>1,1,1</color>
+   </light>
+
+   <scene_graph>
+      <root>
+         <children>
+
+            <child>
+				<name>Robbit Transform Node</name>
+				<translation>0,0,0</translation>
+				<rotation>1,0,0,0</rotation>
+				<scale>0.4,0.4,0.4</scale>
+				<children>
+				
+					<child>
+						<name>Robbit Head Transform</name>
+						<translation>.05,1.8,-0.35</translation>
+						<rotation>1,0,0,0</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+							<child>
+								<name>Robbit Head</name>
+								<entity>
+									<name>Robbit Head Entity</name>
+									<mesh>RobbitHead.mesh</mesh>
+									<material>RobbitHead</material>
+								</entity>
+								<translation>0,0,0</translation>
+								<rotation>1,0,0,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								</children>
+							</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Robbit Body Transform</name>
+						<translation>0,0,0</translation>
+						<rotation>1,0,0,0</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+							<child>							
+								<name>Robbit Body</name>
+								<entity>
+									<name>Robbit Body Entity</name>
+									<mesh>RobbitBody.mesh</mesh>
+									<material>RobbitBody</material>
+								</entity>
+								<translation>0,0,0</translation>
+								<rotation>1,0,0,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								</children>
+							</child>
+							
+						</children>
+					</child>
+					
+					<child>
+						<name>Robbit Left Arm Transform</name>
+						<translation>-0.8,0.5,-0.35</translation>
+						<rotation>1,0,0,0</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+							<child>
+								<name>Robbit Left Arm Animation</name>
+								<animation>
+									<track>
+										<name>Robbit Left Arm Animation Track</name>
+										<max>2</max>
+										<loop>true</loop>
+										<enabled>true</enabled>
+									</track>
+									<keyframe>
+										<keyTime>0</keyTime>
+										<rotation>0,1,0,0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.25</keyTime>
+										<rotation>45, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.5</keyTime>
+										<rotation>90, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.75</keyTime>
+										<rotation>45, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1</keyTime>
+										<rotation>0,1,0,0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1.25</keyTime>
+										<rotation>-45, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1.5</keyTime>
+										<rotation>-90, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1.75</keyTime>
+										<rotation>-45, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>2.0</keyTime>
+										<rotation>0,1,0,0</rotation>
+									</keyframe>
+								</animation>
+								<children>
+									<child>
+										<name>Robbit Left Arm</name>
+										<entity>
+											<name>Robbit Left Arm Entity</name>
+											<mesh>RobbitArm.mesh</mesh>
+											<material>RobbitArm</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										</children>
+									</child>
+								</children>
+								
+							</child>
+								
+							
+						</children>
+					</child>
+					
+					<child>
+						<name>Robbit Right Arm Transform</name>
+						<translation>0.8,0.5,-0.35</translation>
+						<rotation>1,0,0,0</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Robbit Right Arm Animation</name>
+							<animation>
+								<track>
+									<name>Robbit Right Arm Animation Track</name>
+									<max>2</max>
+									<loop>true</loop>
+									<enabled>true</enabled>
+								</track>
+								<keyframe>
+										<keyTime>0</keyTime>
+										<rotation>0,-1,0,0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.25</keyTime>
+										<rotation>45, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.5</keyTime>
+										<rotation>90, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.75</keyTime>
+										<rotation>45, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1</keyTime>
+										<rotation>0,-1,0,0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1.25</keyTime>
+										<rotation>-45, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1.5</keyTime>
+										<rotation>-90, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1.75</keyTime>
+										<rotation>-45, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>2.0</keyTime>
+										<rotation>0,-1,0,0</rotation>
+									</keyframe>
+								</animation>
+							<children>
+					
+								<child>
+									<name>Robbit Right Arm</name>
+									<entity>
+										<name>Robbit Right Arm Entity</name>
+										<mesh>RobbitArm.mesh</mesh>
+										<material>RobbitArm</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>-0.0000000447114,0,1,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+									</children>
+								</child>
+								
+							</children>
+						</child>
+							
+						</children>
+					</child>
+					
+					<child>
+						<name>Robbit Left Leg Transform</name>
+						<translation>-0.3,-1,-0.35</translation>
+						<rotation>1,0,0,0</rotation>
+						<scale>1,1,1</scale>
+						<children>
+							<child>
+								<name>Robbit Left Leg Animation</name>
+								<animation>
+									<track>
+										<name>Robbit Left Leg Animation Track</name>
+										<max>1</max>
+										<loop>true</loop>
+										<enabled>true</enabled>
+									</track>
+									<keyframe>
+										<keyTime>0</keyTime>
+										<rotation>0,0,0,0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.25</keyTime>
+										<rotation>45, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.5</keyTime>
+										<rotation>0, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.75</keyTime>
+										<rotation>-45, 1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1</keyTime>
+										<rotation>0,1,0,0</rotation>
+									</keyframe>
+								</animation>
+								<children>
+								
+									<child>
+										<name>Robbit Left Leg</name>
+										<entity>
+											<name>Robbit Left Leg Entity</name>
+											<mesh>RobbitLeg.mesh</mesh>
+											<material>RobbitLeg</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										</children>
+									</child>
+									
+								</children>
+							</child>
+							
+						</children>
+					</child>
+					
+					<child>
+						<name>Robbit Right Leg Transform</name>
+						<translation>0.3,-1,-0.35</translation>
+						<rotation>1,0,0,0</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+							<child>
+							<name>Robbit Right Leg Animation</name>
+							<animation>
+								<track>
+									<name>Robbit Right Leg Animation Track</name>
+									<max>1</max>
+									<loop>true</loop>
+									<enabled>true</enabled>
+								</track>
+								<keyframe>
+										<keyTime>0</keyTime>
+										<rotation>0,0,0,0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.25</keyTime>
+										<rotation>45, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.5</keyTime>
+										<rotation>0, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>.75</keyTime>
+										<rotation>-45, -1, 0, 0</rotation>
+									</keyframe>
+									<keyframe>
+										<keyTime>1</keyTime>
+										<rotation>0,-1,0,0</rotation>
+									</keyframe>
+								</animation>
+							<children>
+								<child>
+									<name>Robbit Right Leg</name>
+									<entity>
+										<name>Robbit Right Leg Entity</name>
+										<mesh>RobbitLeg.mesh</mesh>
+										<material>RobbitLeg</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+									</children>
+								</child>
+								
+							</children>
+						</child>
+							
+						</children>
+					</child>
+					
+				</children>
+            </child>
+			
+			<child>
+				<name>Lamps Transform Node</name>
+				<translation>0,.8,0</translation>
+				<rotation>1,0,0,0</rotation>
+				<scale>1,1,1</scale>
+				<children>
+				
+					<child>
+					<name>Lamps Animation Node</name>
+					<animation>
+						<track>
+							<name>Lamps Animation Track</name>
+							<max>20</max>
+							<loop>true</loop>
+							<enabled>true</enabled>
+						</track>
+						<keyframe>
+							<keyTime>0</keyTime>
+							<translation>0,0,30</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>1</keyTime>
+							<translation>0,0,25</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>2</keyTime>
+							<translation>0,0,20</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>3</keyTime>
+							<translation>0,0,15</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>4</keyTime>
+							<translation>0,0,10</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>5</keyTime>
+							<translation>0,0,5</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>6</keyTime>
+							<translation>0,0,0</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>7</keyTime>
+							<translation>0,0,-5</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>8</keyTime>
+							<translation>0,0,-10</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>9</keyTime>
+							<translation>0,0,-15</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>10</keyTime>
+							<translation>0,0,-20</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>11</keyTime>
+							<translation>0,0,-25</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>12</keyTime>
+							<translation>0,0,-30</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>13</keyTime>
+							<translation>0,0,-35</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>14</keyTime>
+							<translation>0,0,-40</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>15</keyTime>
+							<translation>0,0,-45</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>16</keyTime>
+							<translation>0,0,-50</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>17</keyTime>
+							<translation>0,0,-55</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>18</keyTime>
+							<translation>0,0,-60</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>19</keyTime>
+							<translation>0,0,-65</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>20</keyTime>
+							<translation>0,0,-70</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>20.3</keyTime>
+							<translation>0,0,-100</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>20.5</keyTime>
+							<translation>0,100,-100</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>20.7</keyTime>
+							<translation>0,100,25</translation>
+						</keyframe>
+						<keyframe>
+							<keyTime>21</keyTime>
+							<translation>0,0,25</translation>
+						</keyframe>
+					</animation>
+					<children>
+				
+					<child>
+						<name>Lamp 1 Transform Node</name>
+						<translation>-5,0,10</translation>
+						<rotation>0.5,-0.5,0.5,-0.5</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 1</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 1</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 1</name>
+									<entity>
+										<name>Base Entity 1</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 1</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 1</name>
+										<entity>
+											<name>Lower Base Entity 1</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 1</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 1</name>
+											<entity>
+												<name>Upper Base Entity 1</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 1</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 1</name>
+													<entity>
+														<name>Lamp Shade Entity 1</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+													<children>
+													</children>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Lamp 2 Transform Node</name>
+						<translation>5,0,10</translation>
+						<rotation>0.70710,0,0,-0.70710</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 2</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 2</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 2</name>
+									<entity>
+										<name>Base Entity 2</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 2</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 2</name>
+										<entity>
+											<name>Lower Base Entity 2</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 2</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 2</name>
+											<entity>
+												<name>Upper Base Entity 2</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 2</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 2</name>
+													<entity>
+														<name>Lamp Shade Entity 2</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+													<children>
+													</children>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Lamp 3 Transform Node</name>
+						<translation>-5,0,20</translation>
+						<rotation>0.5,-0.5,0.5,-0.5</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 3</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 3</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 3</name>
+									<entity>
+										<name>Base Entity 3</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 3</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 3</name>
+										<entity>
+											<name>Lower Base Entity 3</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 3</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 3</name>
+											<entity>
+												<name>Upper Base Entity 3</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 3</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 3</name>
+													<entity>
+														<name>Lamp Shade Entity 3</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					<child>
+						<name>Lamp 4 Transform Node</name>
+						<translation>5,0,20</translation>
+						<rotation>0.70710,0,0,-0.70710</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 4</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 4</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 4</name>
+									<entity>
+										<name>Base Entity 4</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 4</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 4</name>
+										<entity>
+											<name>Lower Base Entity 4</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 4</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 4</name>
+											<entity>
+												<name>Upper Base Entity 4</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 4</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 4</name>
+													<entity>
+														<name>Lamp Shade Entity 4</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+													<children>
+													</children>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Lamp 5 Transform Node</name>
+						<translation>-5,0,30</translation>
+						<rotation>0.5,-0.5,0.5,-0.5</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 5</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 5</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 5</name>
+									<entity>
+										<name>Base Entity 5</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 5</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 5</name>
+										<entity>
+											<name>Lower Base Entity 5</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 5</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 5</name>
+											<entity>
+												<name>Upper Base Entity 5</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 5</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 5</name>
+													<entity>
+														<name>Lamp Shade Entity 5</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Lamp 6 Transform Node</name>
+						<translation>5,0,30</translation>
+						<rotation>0.70710,0,0,-0.70710</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 6</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 6</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 6</name>
+									<entity>
+										<name>Base Entity 6</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 6</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 6</name>
+										<entity>
+											<name>Lower Base Entity 6</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 6</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 6</name>
+											<entity>
+												<name>Upper Base Entity 6</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 6</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 6</name>
+													<entity>
+														<name>Lamp Shade Entity 6</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+													<children>
+													</children>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Lamp 7 Transform Node</name>
+						<translation>-5,0,40</translation>
+						<rotation>0.5,-0.5,0.5,-0.5</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 7</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 7</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 7</name>
+									<entity>
+										<name>Base Entity 7</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 7</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 7</name>
+										<entity>
+											<name>Lower Base Entity 7</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 7</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 7</name>
+											<entity>
+												<name>Upper Base Entity 7</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 7</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 7</name>
+													<entity>
+														<name>Lamp Shade Entity 7</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+													<children>
+													</children>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Lamp 8 Transform Node</name>
+						<translation>5,0,40</translation>
+						<rotation>0.70710,0,0,-0.70710</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 8</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 8</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 8</name>
+									<entity>
+										<name>Base Entity 8</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 8</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 8</name>
+										<entity>
+											<name>Lower Base Entity 8</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 8</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 8</name>
+											<entity>
+												<name>Upper Base Entity 8</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 8</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 8</name>
+													<entity>
+														<name>Lamp Shade Entity 8</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+													<children>
+													</children>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					<child>
+						<name>Lamp 9 Transform Node</name>
+						<translation>-5,0,50</translation>
+						<rotation>0.5,-0.5,0.5,-0.5</rotation>
+						<scale>1,1,1</scale>
+						<children>
+						
+						<child>
+							<name>Lamp 9</name>
+							<translation>0,0,0</translation>
+							<rotation>0.70710,0,0,0.70710</rotation>
+							<scale>.5,.7,.5</scale>
+							<children>
+							
+							<child>
+								<name>Base Transform 9</name>
+								<translation>0,-2,0</translation>
+								<rotation>0.965926,0,0.258819,0</rotation>
+								<scale>1,1,1</scale>
+								<children>
+								
+								<child>
+									<name>Base 9</name>
+									<entity>
+										<name>Base Entity 9</name>
+										<mesh>cylinder.mesh</mesh>
+										<material>Cylinder</material>
+									</entity>
+									<translation>0,0,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>.8,.8,.8</scale>
+									<children>
+									</children>
+								</child>
+								
+								<child>
+									<name>Lower Base Transform 9</name>
+									<translation>0,3,0</translation>
+									<rotation>1,0,0,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+										
+									<child>
+										<name>Lower Base 9</name>
+										<entity>
+											<name>Lower Base Entity 9</name>
+											<mesh>cube.mesh</mesh>
+											<material>Cube</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.1,2,.1</scale>
+										<children>
+										</children>
+									</child>
+								
+									<child>
+										<name>Upper Base Transform 9</name>
+										<translation>-1.2,2,0</translation>
+										<rotation>0.70710,0,0,0.70710</rotation>
+										<scale>1,1,1</scale>
+										<children>
+										
+										<child>
+											<name>Upper Base 9</name>
+											<entity>
+												<name>Upper Base Entity 9</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,.9,.1</scale>
+											<children>
+											</children>
+										</child>
+										
+										<child>
+											<name>Lamp Shade Transform 9</name>
+											<translation>-.2,0.9,0</translation>
+											<rotation>0.70710,0,0,-0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+												
+												<child>
+													<name>Lamp Shade 9</name>
+													<entity>
+														<name>Lamp Shade Entity 9</name>
+														<mesh>LampShade.mesh</mesh>
+														<material>lamp</material>
+													</entity>
+													<translation>0,0,0</translation>
+													<rotation>1,0,0,0</rotation>
+													<scale>.5,.5,.5</scale>
+													<children>
+													</children>
+												</child>
+												
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						</children>
+					</child>
+				
+					<child>
+							<name>Lamp 10 Transform Node</name>
+							<translation>5,0,50</translation>
+							<rotation>0.70710,0,0,-0.70710</rotation>
+							<scale>1,1,1</scale>
+							<children>
+							
+							<child>
+								<name>Lamp 10</name>
+								<translation>0,0,0</translation>
+								<rotation>0.70710,0,0,0.70710</rotation>
+								<scale>.5,.7,.5</scale>
+								<children>
+								
+								<child>
+									<name>Base Transform 10</name>
+									<translation>0,-2,0</translation>
+									<rotation>0.965926,0,0.258819,0</rotation>
+									<scale>1,1,1</scale>
+									<children>
+									
+									<child>
+										<name>Base 10</name>
+										<entity>
+											<name>Base Entity 10</name>
+											<mesh>cylinder.mesh</mesh>
+											<material>Cylinder</material>
+										</entity>
+										<translation>0,0,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>.8,.8,.8</scale>
+										<children>
+										</children>
+									</child>
+									
+									<child>
+										<name>Lower Base Transform 10</name>
+										<translation>0,3,0</translation>
+										<rotation>1,0,0,0</rotation>
+										<scale>1,1,1</scale>
+										<children>
+											
+										<child>
+											<name>Lower Base 10</name>
+											<entity>
+												<name>Lower Base Entity 10</name>
+												<mesh>cube.mesh</mesh>
+												<material>Cube</material>
+											</entity>
+											<translation>0,0,0</translation>
+											<rotation>1,0,0,0</rotation>
+											<scale>.1,2,.1</scale>
+											<children>
+											</children>
+										</child>
+									
+										<child>
+											<name>Upper Base Transform 10</name>
+											<translation>-1.2,2,0</translation>
+											<rotation>0.70710,0,0,0.70710</rotation>
+											<scale>1,1,1</scale>
+											<children>
+											
+											<child>
+												<name>Upper Base 10</name>
+												<entity>
+													<name>Upper Base Entity 10</name>
+													<mesh>cube.mesh</mesh>
+													<material>Cube</material>
+												</entity>
+												<translation>0,0,0</translation>
+												<rotation>1,0,0,0</rotation>
+												<scale>.1,.9,.1</scale>
+												<children>
+												</children>
+											</child>
+											
+											<child>
+												<name>Lamp Shade Transform 10</name>
+												<translation>-.2,0.9,0</translation>
+												<rotation>0.70710,0,0,-0.70710</rotation>
+												<scale>1,1,1</scale>
+												<children>
+													
+													<child>
+														<name>Lamp Shade 10</name>
+														<entity>
+															<name>Lamp Shade Entity 10</name>
+															<mesh>LampShade.mesh</mesh>
+															<material>lamp</material>
+														</entity>
+														<translation>0,0,0</translation>
+														<rotation>1,0,0,0</rotation>
+														<scale>.5,.5,.5</scale>
+														<children>
+														</children>
+													</child>
+													
+												</children>
+											</child>
+											
+											</children>
+										</child>
+										
+										</children>
+									</child>
+									
+									</children>
+								</child>
+								
+								</children>
+							</child>
+							
+							</children>
+						</child>
+						
+						<child>
+							<name>Hurdle 1</name>
+							<entity>
+								<name>Hurdle Entity 1</name>
+								<mesh>cube.mesh</mesh>
+								<material>Hurdle</material>
+							</entity>
+							<translation>0,-1.5,10</translation>
+							<rotation>1,0,0,0</rotation>
+							<scale>2,.48,.3</scale>
+							<children>
+							</children>
+						</child>
+						
+						<child>
+							<name>Hurdle 2</name>
+							<entity>
+								<name>Hurdle Entity 2</name>
+								<mesh>cube.mesh</mesh>
+								<material>Hurdle</material>
+							</entity>
+							<translation>-2,-1.5,17</translation>
+							<rotation>1,0,0,0</rotation>
+							<scale>1.8,.48,.3</scale>
+							<children>
+							</children>
+						</child>
+						
+						<child>
+							<name>Hurdle 3</name>
+							<entity>
+								<name>Hurdle Entity 3</name>
+								<mesh>cube.mesh</mesh>
+								<material>Hurdle</material>
+							</entity>
+							<translation>1.5,0,30</translation>
+							<rotation>1,0,0,0</rotation>
+							<scale>.2,2,.3</scale>
+							<children>
+							</children>
+						</child>
+						
+						<child>
+							<name>Hurdle 4</name>
+							<entity>
+								<name>Hurdle Entity 4</name>
+								<mesh>cube.mesh</mesh>
+								<material>Hurdle</material>
+							</entity>
+							<translation>-1.5,0,30</translation>
+							<rotation>1,0,0,0</rotation>
+							<scale>.2,2,.3</scale>
+							<children>
+							</children>
+						</child>
+						
+						<child>
+							<name>Hurdle 5</name>
+							<entity>
+								<name>Hurdle Entity 5</name>
+								<mesh>cube.mesh</mesh>
+								<material>Hurdle</material>
+							</entity>
+							<translation>2.0,-1.5,40</translation>
+							<rotation>1,0,0,0</rotation>
+							<scale>1.3,.48,.3</scale>
+							<children>
+							</children>
+						</child>
+						
+						<child>
+							<name>Hurdle 6</name>
+							<entity>
+								<name>Hurdle Entity 6</name>
+								<mesh>cube.mesh</mesh>
+								<material>Hurdle</material>
+							</entity>
+							<translation>0,-1.5,50</translation>
+							<rotation>1,0,0,0</rotation>
+							<scale>5,.48,.3</scale>
+							<children>
+							</children>
+						</child>
+						
+						</children>
+					</child>
+					
+					</children>
+				</child>
+			
+         </children>
+      </root>
+   </scene_graph>
+
+</default>
+
+
+<test>
+
+   <camera>
+      <position>0,0,10</position>
+      <look_at>0,0,-500</look_at>
+      <clip_distance>2,50</clip_distance>
+   </camera>
+
+   <light>
+      <name>Light</name>
+      <type>directional</type>
+      <position>0,0,-1</position>
+      <color>1,1,1</color>
+   </light>
+
+   <scene_graph>
+      <root>
+         <children>
+
+            <child>
+               <name>CubeNode1</name>
+               <entity>
+                  <name>Cube1</name>
+                  <mesh>cube.mesh</mesh>
+                  <material>Cube</material>
+               </entity>
+               <translation>1,1,3</translation>
+               <rotation>45,1,1,1</rotation>
+               <scale>1,1,1</scale>
+               <children>
+               </children>
+            </child>
+
+            <child>
+               <name>CubeNode2</name>
+               <entity>
+                  <name>Cube2</name>
+                  <mesh>cube.mesh</mesh>
+                  <material>Cube</material>
+               </entity>
+               <translation>-5,-1,-5</translation>
+               <rotation>45,1,1,1</rotation>
+               <scale>1,1,1</scale>
+               <children>
+               </children>
+            </child>
+
+         </children>
+      </root>
+   </scene_graph>
+
+</test>
+

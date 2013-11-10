@@ -1,0 +1,181 @@
+
+<resources>
+
+   <resource>
+      <uid>1</uid>
+      <scope>default</scope>
+      <resource_type>path</resource_type>
+      <file_name>./media/models</file_name>
+   </resource>
+
+   <resource>
+      <uid>2</uid>
+      <scope>default</scope>
+      <resource_type>path</resource_type>
+      <file_name>./media/materials/scripts</file_name>
+   </resource>
+
+   <resource>
+      <uid>3</uid>
+      <scope>default</scope>
+      <resource_type>path</resource_type>
+      <file_name>./media/materials/textures</file_name>
+   </resource>
+
+   <resource>
+      <uid>4</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>submarine.mesh</file_name>
+   </resource>
+
+   <resource>
+      <uid>5</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>rudder.mesh</file_name>
+   </resource>
+
+   <resource>
+      <uid>6</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>periscope.mesh</file_name>
+   </resource>
+
+   <resource>
+      <uid>7</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>propeller.mesh</file_name>
+   </resource>
+
+   <resource>
+      <uid>8</uid>
+      <scope>default</scope>
+      <resource_type>audio</resource_type>
+      <file_name>media/audio/ambient_water.mp3</file_name>
+      <audio_type>stream</audio_type>
+   </resource>
+
+   <resource>
+      <uid>9</uid>
+      <scope>default</scope>
+      <resource_type>audio</resource_type>
+      <file_name>media/audio/alien_weapon.mp3</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>10</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>LampShade.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>11</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>MyPropeller.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>12</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>MyRudder.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>13</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>MyScope.mesh</file_name>
+   </resource>
+
+   <resource>
+      <uid>14</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>MySub.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>15</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>RobbitArm.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>16</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>RobbitBody.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>17</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>RobbitHead.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>18</uid>
+      <scope>default</scope>
+      <resource_type>mesh</resource_type>
+      <file_name>RobbitLeg.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>19</uid>
+      <scope>default</scope>
+      <resource_type>path</resource_type>
+      <file_name>./</file_name>
+   </resource>
+   
+	<resource>
+		<uid>12</uid>
+		<scope>default</scope>
+		<resource_type>cursor</resource_type>
+		<file_name>./media/assets/cursor.rml</file_name>
+	</resource>
+	
+	<resource>
+		<uid>13</uid>
+		<scope>default</scope>
+		<resource_type>document</resource_type>
+		<file_name>./media/assets/mark.rml</file_name>
+	</resource>
+	
+	<resource>
+		<uid>14</uid>
+		<scope>default</scope>
+		<resource_type>font</resource_type>
+		<file_name>./media/assets/Delicious-Roman.otf</file_name>
+	</resource>
+	
+	<resource>
+		<uid>15</uid>
+		<scope>default</scope>
+		<resource_type>font</resource_type>
+		<file_name>./media/assets/Delicious-Bold.otf</file_name>
+	</resource>
+	
+	<resource>
+		<uid>16</uid>
+		<scope>default</scope>
+		<resource_type>font</resource_type>
+		<file_name>./media/assets/Delicious-Italic.otf</file_name>
+	</resource>
+	
+	<resource>
+		<uid>17</uid>
+		<scope>default</scope>
+		<resource_type>font</resource_type>
+		<file_name>./media/assets/Delicious-BoldItalic.otf</file_name>
+	</resource>
+	
+</resources>

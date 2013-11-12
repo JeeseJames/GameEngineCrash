@@ -52,7 +52,7 @@ cout<<"Destorying Behavior Manager"<<endl;
    delete iter;
    delete mouse_move_behaviors;
    
-   iter = mouse_move_behaviors->tableIterator();
+   iter = mouse_press_behaviors->tableIterator();
    while(iter->hasNext())
    {
       GameBehavior* gb = iter->next();
@@ -62,7 +62,7 @@ cout<<"Destorying Behavior Manager"<<endl;
    delete iter;
    delete mouse_press_behaviors;
    
-   iter = mouse_move_behaviors->tableIterator();
+   iter = mouse_release_behaviors->tableIterator();
    while(iter->hasNext())
    {
       GameBehavior* gb = iter->next();
@@ -71,7 +71,7 @@ cout<<"Destorying Behavior Manager"<<endl;
    
    delete iter;
    delete mouse_release_behaviors;
-   iter = mouse_move_behaviors->tableIterator();
+   iter = mouse_held_behaviors->tableIterator();
    while(iter->hasNext())
    {
       GameBehavior* gb = iter->next();
